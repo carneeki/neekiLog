@@ -1,0 +1,24 @@
+/* Usage:
+ * Step 1: Create a global variable to hold the logger object.
+ * neekiLog nl;
+ *
+ * Step 2: Create a new logger object inside setup(). It MUST be in setup or
+ *         else weird stuff happens, like the log file winding up in the
+ *         Processing directory, and that gives you bad permissions errors.
+ *
+ *         If you don't want to log to a file, simply change sketchPath() to
+ *         a boolean false value. The logger is smart enough to do the rest.
+ *
+ * void setup() {
+ *   nl = new neekiLog(neekiLog.INFO,true,sketchPath(""));
+ * }
+ *
+ * Step 3: Print debug messages where ever you want them.
+ *
+ * void draw() {
+ *   nl.INFO("This is an INFO log message");
+ *   nl.DEBUG("This is a DEBUG log message");
+ * }
+ *
+ * Step 4: Have fun with it :D
+ */
