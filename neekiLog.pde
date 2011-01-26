@@ -1,38 +1,35 @@
-/* Usage:
- * Step 1: Create a global variable to hold the logger object.
- * neekiLog nl;
- *
- * Step 2: Create a new logger object inside setup(). It MUST be in setup or
- *         else weird stuff happens, like the log file winding up in the
- *         Processing directory, and that gives you bad permissions errors.
- *
- *         If you don't want to log to a file, simply change sketchPath() to
- *         a boolean false value. The logger is smart enough to do the rest.
- *
- * void setup() {
- *   nl = new neekiLog(neekiLog.INFO,true,sketchPath(""));
- * }
- *
- * Step 3: Print debug messages where ever you want them.
- *
- * void draw() {
- *   nl.INFO("This is an INFO log message");
- *   nl.DEBUG("This is a DEBUG log message");
- * }
- *
- * Step 4: Have fun with it :D
- */
-
 /**
  * neekiLog - Logging Class by Adam Carmichael
- * (C) 2010 - Adam Carmichael <carneeki@carneeki.net>
+ * (C) 2011 - Adam Carmichael <carneeki@carneeki.net>
  * <p>
  * @author  : $Author$
  * @version : $Revision$
  * @Date    : $Date$
- * @HeadURL : $HeadURL$
- * @copyright This class may not be used without expressed permission by author.
+ * @HeadURL : https://github.com/carneeki/neekiLog/raw/master/neekiLog.pde
+ * @copyright This class is released under MIT License as follows below.
  */
+/*
+Copyright (c) 2011 Adam Carmichael <carneeki@carneeki.net>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*/
+
 static class neekiLog extends PApplet {
   import java.io.BufferedWriter;
   import java.io.File;
